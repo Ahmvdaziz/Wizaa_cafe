@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Velour Café — A luxury artisan café in Paris. Ethically sourced coffee, handcrafted pastries, and an unforgettable dining experience." />
+  <title>Velour Café — A Luxury Experience</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:wght@300;400;500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ================================================
+       NAVBAR
+  ================================================= -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <span class="logo-icon">☕</span>
+        <span class="logo-text">Velour<em>Café</em></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#loyalty">Membership</a></li>
+        <li><a href="#hours">Hours</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="nav-reserve-btn"
+        onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+        Reserve a Table
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu"
+        aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ================================================
+       HERO SLIDER
+  ================================================= -->
+  <section class="hero" id="hero">
+    <div class="slider-wrapper">
+
+      <!-- Slide 1 -->
+      <div class="slide active"
+        style="background-image:url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1920&q=85')">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <span class="slide-tag">Est. 2015 — Paris, France</span>
+          <h1 class="slide-title">
+            Where Every Cup<br/><em>Tells a Story</em>
+          </h1>
+          <p class="slide-subtitle">
+            Artisan coffee, curated flavors, and an ambiance crafted
+            for the discerning palate. Welcome to Velour.
+          </p>
+          <div class="slide-cta">
+            <a href="#menu" class="btn-primary">Explore Our Menu</a>
+            <a href="#about" class="btn-ghost">Our Story</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="slide"
+        style="background-image:url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1920&q=85')">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <span class="slide-tag">Single-Origin Blends</span>
+          <h1 class="slide-title">
+            Brewed with<br/><em>Precision &amp; Passion</em>
+          </h1>
+          <p class="slide-subtitle">
+            From Ethiopian highlands to Colombian valleys —
+            sourced ethically, roasted in-house, served with love.
+          </p>
+          <div class="slide-cta">
+            <a href="#menu" class="btn-primary">Our Coffees</a>
+            <a href="#experience" class="btn-ghost">The Experience</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="slide"
+        style="background-image:url('https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=1920&q=85')">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <span class="slide-tag">Private Dining Available</span>
+          <h1 class="slide-title">
+            A Sanctuary<br/><em>of Indulgence</em>
+          </h1>
+          <p class="slide-subtitle">
+            Intimate corners, warm candlelight, and an atmosphere
+            designed to slow time down and awaken the senses.
+          </p>
+          <div class="slide-cta">
+            <a href="#contact" class="btn-primary">Book Your Visit</a>
+            <a href="#gallery" class="btn-ghost">View Gallery</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Arrows -->
+      <button class="slider-arrow prev" id="prevBtn" aria-label="Previous slide">
+        <i class="ri-arrow-left-line"></i>
+      </button>
+      <button class="slider-arrow next" id="nextBtn" aria-label="Next slide">
+        <i class="ri-arrow-right-line"></i>
+      </button>
+
+      <!-- Dots -->
+      <div class="slider-dots" id="sliderDots">
+        <button class="dot active" data-index="0" aria-label="Slide 1"></button>
+        <button class="dot"        data-index="1" aria-label="Slide 2"></button>
+        <button class="dot"        data-index="2" aria-label="Slide 3"></button>
+      </div>
+
+      <!-- Progress bar -->
+      <div class="slide-progress">
+        <div class="slide-progress-bar" id="progressBar"></div>
+      </div>
+
+      <!-- Counter -->
+      <div class="slide-counter">
+        <span id="currentSlide">01</span>
+        <span class="divider">/</span>
+        <span>03</span>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       ABOUT SECTION
+  ================================================= -->
+  <section class="about section-padding" id="about">
+    <div class="container">
+      <div class="about-grid">
+
+        <!-- Images -->
+        <div class="about-images" data-animate="fade-left">
+          <div class="about-img-main">
+            <img
+              src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=700&q=85"
+              alt="Velour Café interior with warm lighting" />
+          </div>
+          <div class="about-img-secondary">
+            <img
+              src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=400&q=85"
+              alt="Barista crafting a latte" />
+            <div class="about-badge">
+              <span class="badge-number">10</span>
+              <span class="badge-text">Years of<br/>Excellence</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="about-content" data-animate="fade-right">
+          <span class="section-tag">Our Story</span>
+          <h2 class="section-title">
+            More Than Coffee.<br/><em>A Philosophy.</em>
+          </h2>
+          <p class="about-lead">
+            We believe a perfect cup of coffee is a meditation —
+            a ritual that deserves reverence, time, and artistry.
+          </p>
+          <p class="about-body">
+            Founded in 2015 in the heart of Paris's Golden Triangle,
+            Velour Café was born from a single obsession: to create
+            moments that linger long after the last sip. Our master
+            baristas train for years under world-class mentors including
+            former World Barista Champions, our beans are sourced from
+            the world's finest micro-farms through direct trade
+            relationships, and our interiors were designed by Atelier
+            Bardot — Paris's celebrated studio — to make you forget
+            the rush of the city outside.
+          </p>
+          <p class="about-body">
+            Every detail — from the hand-thrown ceramic cups sourced
+            from a Provençal atelier to the bespoke jazz and classical
+            playlist curated by our resident musician that evolves with
+            the hour — is intentional. At Velour, coffee is not just a
+            beverage. It is a ceremony.
+          </p>
+
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-number">40+</span>
+              <span class="stat-label">Blends &amp; Origins</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">3</span>
+              <span class="stat-label">Locations</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">98%</span>
+              <span class="stat-label">Happy Guests</span>
+            </div>
+          </div>
+
+          <a href="#menu" class="btn-primary">Discover Our Menu</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       MENU SECTION
+  ================================================= -->
+  <section class="menu section-padding" id="menu">
+    <div class="container">
+
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-tag">Signature Selection</span>
+        <h2 class="section-title">Crafted to <em>Perfection</em></h2>
+        <p class="section-subtitle">
+          Each item on our menu is a labor of love, designed to engage
+          every sense. Sourced locally, prepared daily, served with pride.
+        </p>
+      </div>
+
+      <!-- Tabs -->
+      <div class="menu-tabs" data-animate="fade-up">
+        <button class="tab-btn active" data-tab="coffee">Coffee</button>
+        <button class="tab-btn" data-tab="tea">Tea &amp; Drinks</button>
+        <button class="tab-btn" data-tab="pastries">Pastries</button>
+        <button class="tab-btn" data-tab="brunch">Brunch</button>
+      </div>
+
+      <!-- ── Coffee Tab ── -->
+      <div class="menu-panel active" id="tab-coffee">
+        <div class="menu-grid">
+
+          <div class="menu-item featured" data-animate="fade-up">
+            <div class="menu-item-image">
+              <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?w=600&q=85"
+                alt="Velour Signature Espresso" />
+              <div class="menu-item-overlay"><span>Signature</span></div>
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <h3>Velour Espresso</h3>
+                <span class="menu-price">€8.90</span>
+              </div>
+              <p>Our flagship double shot — rich, velvety, with deep notes of dark chocolate,
+                rose, and a lingering salted caramel finish. Pulled at precisely 93°C from
+                our direct-trade Ethiopian Yirgacheffe.</p>
+              <div class="menu-tags">
+                <span>Signature</span><span>Strong</span><span>Single Origin</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-item" data-animate="fade-up" style="--delay:0.1s">
+            <div class="menu-item-image">
+              <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600&q=85"
+                alt="Velvet Cortado" />
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <h3>Velvet Cortado</h3>
+                <span class="menu-price">€7.90</span>
+              </div>
+              <p>Equal parts espresso and hand-steamed whole milk. Silky, balanced,
+                and smooth — a purist's afternoon ritual.</p>
+              <div class="menu-tags"><span>Balanced</span><span>Smooth</span></div>
+            </div>
+          </div>
+
+          <div class="menu-item" data-animate="fade-up" style="--delay:0.2s">
+            <div class="menu-item-image">
+              <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=85"
+                alt="Midnight Cold Brew" />
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <h3>Midnight Cold Brew</h3>
+                <span class="menu-price">€8.50</span>
+              </div>
+              <p>Steeped for 18 hours in glacial spring water. Intense, naturally sweet,
+                and utterly captivating. Served over a single large ice sphere.</p>
+              <div class="menu-tags"><span>Cold</span><span>Intense</span></div>
+            </div>
+          </div>
+
+          <div class="menu-item" data-animate="fade-up" style="--delay:0.3s">
+            <div class="menu-item-image">
+              <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=600&q=85"
+                alt="Ivory Flat White" />
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <h3>Ivory Flat White</h3>
+                <span class="menu-price">€7.00</span>
+              </div>
+              <p>Microfoam poured with artistry over a ristretto base.
+                A café classic elevated to a new standard of creaminess.</p>
+              <div class="menu-tags"><span>Creamy</span><span>Art</span></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── Tea & Drinks Tab ── -->
+      <div class="menu-panel" id="tab-tea">
+        <div class="menu-grid">
+
+          <div class="menu-item featured" data-animate="fade-up">
+            <div class="menu-item-image">
+              <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&q=85"
+                alt="Ceremonial Matcha" />
+              <div class="menu-item-overlay"><span>House Favourite</span></div>
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <h3>Ceremonial Matcha</h3>
+                <span class="menu-price">€8.00</span>
+              </div>
+              <p>Grade-A ceremonial matcha whisked to a luminous jade froth, served over oat
+                milk with a dusting of raw cacao. Sourced from Uji, Kyoto — the finest terroir
+                on earth.</p>
+              <div class="menu-tags">
+                <span>Ceremonial</span><span>Vegan</span><span>Antioxidant</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-item" data-animate="fade-up" style="--delay:0.1s">
+            <div class="menu-item-image">
+              <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=600&q=85"
+                alt="Golden Turmeric Latte" />
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <h3>Golden Turmeric Latte</h3>
+                <span class="menu-price">€7.50</span>
+              </div>
+              <p>House-blended turmeric, ginger, cinnamon, and black pepper in warm steamed
+                oat milk. A warming ritual with powerful anti-inflammatory properties.</p>
+              <div class="menu-tags"><span>Wellness</span><span>Vegan</span></div>
+            </div>
+          </div>
+
+          <div class="menu-item" data-animate="fade-up" style="--delay:0.2s">
+            <div class="menu-item-image">
+              <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&q=85"
+                alt="Darjeeling First Flush" />
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <h3>Darjeeling First Flush</h3>
+                <span class="menu-price">€9.00</span>
+              </div>
+              <p>The champagne of teas — a single-estate first flush from the Makaibari estate.
+                Delicate muscatel notes, floral aroma, served in a hand-thrown ceramic pot.</p>
+              <div class="menu-tags"><span>Single Estate</span><span>Rare</span></div>
+            </div>
+          </div>
+
+          <div class="menu-item" data-animate="fade-up" style="--delay:0.3s">
+            <div class="menu-item-image">
+              <img src="https://images.unsplash.com/photo-1499638673689-79a0b5115d87?w=600&q=85"
+                alt="Hibiscus Elderflower Spritz" />
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <h3>Hibiscus Elderflower Spritz</h3>
+                <span class="menu-price">€7.00</span>
+              </div>
+              <p>House-brewed hibiscus tea shaken with elderflower cordial, fresh lime,
+                and San Pellegrino. Served over hand-cut ice with a dried rose petal garnish.</p>
+              <div class="menu-tags"><span>Cold</span><span>Floral</span><span>Non-Alcoholic</span></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── Pastries Tab ── -->
+      <div class="menu-panel" id="tab-pastries">
+        <div class="menu-grid">
+
+          <div class="menu-item featured" data-animate="fade-up">
+            <div class="menu-item-image">
+              <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=85"
+                alt="Truffle Croissant" />
+              <div class="menu-item-overlay"><span>Bestseller</span></div>
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <h3>Truffle Croissant</h3>
+                <span class="menu-price">€6.50</span>
+              </div>
+              <p>72-hour laminated Viennoiserie dough, filled with black truffle butter and
+                aged Gruyère. Baked fresh every morning at 6 AM. Our most requested item.</p>
+              <div class="menu-tags">
+                <span>Savory</span><span>Bestseller</span><span>Freshly Baked</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-item" data-animate="fade-up" style="--delay:0.1s">
+            <div class="menu-item-image">
+              <img src="https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81?w=600&q=85"
+                alt="Gold Citrus Tart" />
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <h3>Gold Citrus Tart</h3>
+                <span class="menu-price">€7.90</span>
+              </div>
+              <p>Lemon and yuzu curd on a buttery shortbread shell,
+                finished with edible 24k gold dust and candied lemon zest.</p>
+              <div class="menu-tags"><span>Sweet</span><span>Zesty</span></div>
+            </div>
+          </div>
+
+          <div class="menu-item" data-animate="fade-up" style="--delay:0.2s">
+            <div class="menu-item-image">
+              <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=600&q=85"
+                alt="Miso Caramel Cake" />
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <h3>Miso Caramel Cake</h3>
+                <span class="menu-price">€8.90</span>
+              </div>
+              <p>Airy white chocolate sponge layered with white miso caramel cream
+                and a hazelnut praline crumble. A perfectly complex dessert.</p>
+              <div class="menu-tags"><span>Unique</span><span>Rich</span></div>
+            </div>
+          </div>
+
+          <div class="menu-item" data-animate="fade-up" style="--delay:0.3s">
+            <div class="menu-item-image">
+              <img      src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&q=85"
+                alt="Velour Seasonal Macarons" />
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <h3>Velour Macarons</h3>
+                <span class="menu-price">€5.20</span>
+              </div>
+              <p>A rotating selection of hand-piped French macarons — seasonal
+                flavors, flawless technique, and ganache fillings made fresh daily.</p>
+              <div class="menu-tags"><span>French</span><span>Seasonal</span></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── Brunch Tab ── -->
+      <div class="menu-panel" id="tab-brunch">
+        <div class="menu-grid">
+
+          <div class="menu-item featured" data-animate="fade-up">
+            <div class="menu-item-image">
+              <img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=600&q=85"
+                alt="Royal Eggs Benedict" />
+              <div class="menu-item-overlay"><span>Chef's Pick</span></div>
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <h3>Royal Eggs Benedict</h3>
+                <span class="menu-price">€22.00</span>
+              </div>
+              <p>Perfectly poached free-range eggs, Amalfi-smoked salmon, and
+                saffron hollandaise on house-baked sourdough. A brunch icon, refined
+                to its most elegant form.</p>
+              <div class="menu-tags">
+                <span>Chef's Pick</span><span>Savory</span><span>Free-Range</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-item" data-animate="fade-up" style="--delay:0.1s">
+            <div class="menu-item-image">
+              <img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=600&q=85"
+                alt="Smashed Avocado Toast" />
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <h3>Smashed Avocado</h3>
+                <span class="menu-price">€17.50</span>
+              </div>
+              <p>Heirloom tomatoes, whipped ricotta, pickled red onion, microgreens,
+                and Calabrian chili flakes on thick-cut house-baked rye sourdough.</p>
+              <div class="menu-tags"><span>Vegetarian</span><span>Fresh</span></div>
+            </div>
+          </div>
+
+          <div class="menu-item" data-animate="fade-up" style="--delay:0.2s">
+            <div class="menu-item-image">
+              <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&q=85"
+                alt="Ricotta Pancakes" />
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <h3>Ricotta Pancakes</h3>
+                <span class="menu-price">€19.50</span>
+              </div>
+              <p>Cloud-light ricotta pancakes with seasonal poached berries,
+                whipped mascarpone, toasted almonds, and pure Vermont maple syrup.</p>
+              <div class="menu-tags"><span>Sweet</span><span>Indulgent</span></div>
+            </div>
+          </div>
+
+          <div class="menu-item" data-animate="fade-up" style="--delay:0.3s">
+            <div class="menu-item-image">
+              <img src="https://images.unsplash.com/photo-1471447888887-0bb9b98b2b01?w=600&q=85"
+                alt="Granola Wellness Bowl" />
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <h3>Granola Wellness Bowl</h3>
+                <span class="menu-price">€14.50</span>
+              </div>
+              <p>House-made activated granola, coconut yogurt, dragon fruit,
+                fresh mango, kiwi, and a raw Sicilian honey drizzle. Vegan and glorious.</p>
+              <div class="menu-tags"><span>Healthy</span><span>Vegan</span></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- end menu panels -->
+
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       EXPERIENCE SECTION
+  ================================================= -->
+  <section class="experience section-padding" id="experience">
+    <div class="experience-bg"></div>
+    <div class="container">
+
+      <div class="section-header light" data-animate="fade-up">
+        <span class="section-tag">The Velour Way</span>
+        <h2 class="section-title">An Experience <em>Beyond the Cup</em></h2>
+        <p class="section-subtitle">
+          Every detail at Velour is intentional — from the music to
+          the temperature of the light. Nothing is left to chance.
+        </p>
+      </div>
+
+      <div class="experience-grid">
+
+        <div class="exp-card" data-animate="fade-up" style="--delay:0s">
+          <div class="exp-icon"><i class="ri-leaf-line"></i></div>
+          <h3>Ethically Sourced</h3>
+          <p>Every bean is traceable to a single farm and a named farmer.
+            We pay 40% above fair-trade market prices and visit our
+            partner farms in Ethiopia, Colombia, and Guatemala every year.</p>
+        </div>
+
+        <div class="exp-card" data-animate="fade-up" style="--delay:0.1s">
+          <div class="exp-icon"><i class="ri-fire-line"></i></div>
+          <h3>In-House Roasting</h3>
+          <p>Our roastery is visible from the café floor. Beans are
+            roasted in 10kg small batches twice weekly on a vintage
+            Probat drum roaster, ensuring unmatched freshness in every cup.</p>
+        </div>
+
+        <div class="exp-card" data-animate="fade-up" style="--delay:0.2s">
+          <div class="exp-icon"><i class="ri-award-line"></i></div>
+          <h3>Award-Winning Baristas</h3>
+          <p>Our team has competed and placed top-three in the World
+            Barista Championship three consecutive years. Your cup is
+            in exceptionally skilled hands.</p>
+        </div>
+
+        <div class="exp-card" data-animate="fade-up" style="--delay:0.3s">
+          <div class="exp-icon"><i class="ri-music-2-line"></i></div>
+          <h3>Curated Atmosphere</h3>
+          <p>Bespoke playlists shift from soft jazz in the morning to
+            ambient electronica by evening. Lighting is tuned by the
+            hour. Acoustics are designed for calm, intimate conversation.</p>
+        </div>
+
+        <div class="exp-card" data-animate="fade-up" style="--delay:0.4s">
+          <div class="exp-icon"><i class="ri-book-open-line"></i></div>
+          <h3>Barista Workshops</h3>
+          <p>Join our monthly masterclasses — open to all levels.
+            Learn the science of extraction, the art of latte pours,
+            and the ritual of the perfect pour-over, guided by our champions.</p>
+        </div>
+
+        <div class="exp-card" data-animate="fade-up" style="--delay:0.5s">
+          <div class="exp-icon"><i class="ri-gift-line"></i></div>
+          <h3>Private Events</h3>
+          <p>Our private salon seats up to 24 guests and can be
+            reserved for coffee tastings, intimate celebrations, corporate
+            mornings, or bespoke dining experiences curated by our chef.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       GALLERY SECTION
+  ================================================= -->
+  <section class="gallery section-padding" id="gallery">
+    <div class="container">
+
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-tag">Visual Journey</span>
+        <h2 class="section-title">Inside <em>Velour</em></h2>
+        <p class="section-subtitle">
+          A glimpse into the world we have carefully crafted —
+          one detail, one frame, one moment at a time.
+        </p>
+      </div>
+
+      <div class="gallery-grid" data-animate="fade-up">
+
+        <div class="gallery-item tall"
+          data-src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1200&q=90">
+          <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800&q=85"
+            alt="Velour Café warm interior" loading="lazy" />
+          <div class="gallery-overlay"><i class="ri-zoom-in-line"></i></div>
+        </div>
+
+        <div class="gallery-item"
+          data-src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1200&q=90">
+          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=85"
+            alt="Espresso pour close-up" loading="lazy" />
+          <div class="gallery-overlay"><i class="ri-zoom-in-line"></i></div>
+        </div>
+
+        <div class="gallery-item"
+          data-src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=1200&q=90">
+          <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=800&q=85"
+            alt="Latte art rosette" loading="lazy" />
+          <div class="gallery-overlay"><i class="ri-zoom-in-line"></i></div>
+        </div>
+
+        <div class="gallery-item wide"
+          data-src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=1200&q=90">
+          <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=800&q=85"
+            alt="Café evening ambiance" loading="lazy" />
+          <div class="gallery-overlay"><i class="ri-zoom-in-line"></i></div>
+        </div>
+
+        <div class="gallery-item"
+          data-src="https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81?w=1200&q=90">
+          <img src="https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81?w=800&q=85"
+            alt="Freshly baked pastries" loading="lazy" />
+          <div class="gallery-overlay"><i class="ri-zoom-in-line"></i></div>
+        </div>
+
+        <div class="gallery-item tall"
+          data-src="https://images.unsplash.com/photo-1541167760496-1628856ab772?w=1200&q=90">
+          <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?w=800&q=85"
+            alt="Coffee beans roasting" loading="lazy" />
+          <div class="gallery-overlay"><i class="ri-zoom-in-line"></i></div>
+        </div>
+
+        <div class="gallery-item"
+          data-src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=1200&q=90">
+          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=800&q=85"
+            alt="Signature coffee cup" loading="lazy" />
+          <div class="gallery-overlay"><i class="ri-zoom-in-line"></i></div>
+        </div>
+
+        <div class="gallery-item"
+          data-src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=1200&q=90">
+          <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=800&q=85"
+            alt="Artisan cake slice" loading="lazy" />
+          <div class="gallery-overlay"><i class="ri-zoom-in-line"></i></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       LIGHTBOX
+  ================================================= -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true"
+    aria-label="Image gallery viewer">
+    <div class="lightbox-overlay" id="lightboxOverlay"></div>
+    <div class="lightbox-container">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close gallery">
+        <i class="ri-close-line"></i>
+      </button>
+      <button class="lightbox-nav prev" id="lightboxPrev" aria-label="Previous image">
+        <i class="ri-arrow-left-line"></i>
+      </button>
+      <div class="lightbox-img-wrapper">
+        <img src="" alt="Gallery image" id="lightboxImg" />
+      </div>
+      <button class="lightbox-nav next" id="lightboxNext" aria-label="Next image">
+        <i class="ri-arrow-right-line"></i>
+      </button>
+      <div class="lightbox-counter" id="lightboxCounter">1 / 8</div>
+    </div>
+  </div>
+
+
+  <!-- ================================================
+       TESTIMONIALS SECTION
+  ================================================= -->
+  <section class="testimonials section-padding" id="testimonials">
+    <div class="container">
+
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-tag">Guest Stories</span>
+        <h2 class="section-title">Words That <em>Linger</em></h2>
+        <p class="section-subtitle">
+          The moments our guests describe are the ones that keep us
+          crafting, refining, and pouring with purpose every day.
+        </p>
+      </div>
+
+      <div class="testimonials-grid" data-animate="fade-up">
+
+        <div class="testimonial-card featured-review">
+          <div class="review-stars">
+            <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+          </div>
+          <blockquote>
+            "Velour Café is not just a coffee shop — it is an event. The moment you
+            walk in, time slows. The Velour Espresso is the finest I have tasted outside
+            of a third-wave roastery in Tokyo. The truffle croissant? Life-changing."
+          </blockquote>
+          <div class="reviewer">
+            <div class="reviewer-avatar" style="background: linear-gradient(135deg,#c8973a,#6b3f22)">
+              <span>SL</span>
+            </div>
+            <div class="reviewer-info">
+              <strong>Sophie Laurent</strong>
+              <span>Food Critic, Le Monde</span>
+            </div>
+            <div class="review-source"><i class="ri-google-fill"></i> Google</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="review-stars">
+            <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+          </div>
+          <blockquote>
+            "I come here every Saturday morning without fail. The baristas remember my
+            order, the music is always perfect, and the ricotta pancakes are the best
+            brunch I have had in Paris."
+          </blockquote>
+          <div class="reviewer">
+            <div class="reviewer-avatar" style="background: linear-gradient(135deg,#4a2c17,#c8973a)">
+              <span>MC</span>
+            </div>
+            <div class="reviewer-info">
+              <strong>Marc Chevalier</strong>
+              <span>Regular Guest</span>
+            </div>
+            <div class="review-source"><i class="ri-yelp-fill"></i> Yelp</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="review-stars">
+            <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+            <i class="ri-star-half-fill"></i>
+          </div>
+          <blockquote>
+            "We hosted our agency's morning client meeting here — private room was
+            impeccable, the bespoke coffee tasting was a showstopper, and our clients
+            were genuinely impressed. Will be back monthly."
+          </blockquote>
+          <div class="reviewer">
+            <div class="reviewer-avatar" style="background: linear-gradient(135deg,#2c1a0e,#6b3f22)">
+              <span>IP</span>
+            </div>
+            <div class="reviewer-info">
+              <strong>Isabelle Perrot</strong>
+              <span>Creative Director, Studio IP</span>
+            </div>
+            <div class="review-source"><i class="ri-tripadvisor-fill"></i> TripAdvisor</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="review-stars">
+            <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+          </div>
+          <blockquote>
+            "The Ceremonial Matcha is revelatory. I did not think a café in Paris could
+            rival what I had in Kyoto, but Velour has. The atmosphere is meditative,
+            the service is thoughtful — not rushed. A true gem."
+          </blockquote>
+          <div class="reviewer">
+            <div class="reviewer-avatar" style="background: linear-gradient(135deg,#e8b96a,#4a2c17)">
+              <span>AT</span>
+            </div>
+            <div class="reviewer-info">
+              <strong>Akira Tanaka</strong>
+              <span>Architect &amp; Traveller</span>
+            </div>
+            <div class="review-source"><i class="ri-google-fill"></i> Google</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="review-stars">
+            <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+          </div>
+          <blockquote>
+            "Attended the Barista Masterclass — my partner and I had the most
+            extraordinary afternoon. We left feeling like we finally understood coffee.
+            The champion barista teaching us was generous, funny, and brilliant."
+          </blockquote>
+          <div class="reviewer">
+            <div class="reviewer-avatar" style="background: linear-gradient(135deg,#c8973a,#2c1a0e)">
+              <span>CB</span>
+            </div>
+            <div class="reviewer-info">
+              <strong>Clara &amp; Benoît</strong>
+              <span>Workshop Attendees</span>
+            </div>
+            <div class="review-source"><i class="ri-instagram-fill"></i> Instagram</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Rating summary bar -->
+      <div class="rating-summary" data-animate="fade-up">
+        <div class="rating-score">
+          <span class="score-number">4.9</span>
+          <div class="score-stars">
+            <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+          </div>
+          <span class="score-label">Overall Rating</span>
+        </div>
+        <div class="rating-divider"></div>
+        <div class="rating-bars">
+          <div class="rating-bar-row">
+            <span>Service</span>
+            <div class="bar-track"><div class="bar-fill" style="width:98%"></div></div>
+            <span>4.9</span>
+          </div>
+          <div class="rating-bar-row">
+            <span>Coffee</span>
+            <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+            <span>5.0</span>
+          </div>
+          <div class="rating-bar-row">
+            <span>Atmosphere</span>
+            <div class="bar-track"><div class="bar-fill" style="width:96%"></div></div>
+            <span>4.8</span>
+          </div>
+          <div class="rating-bar-row">
+            <span>Value</span>
+            <div class="bar-track"><div class="bar-fill" style="width:94%"></div></div>
+            <span>4.7</span>
+          </div>
+        </div>
+        <div class="rating-divider"></div>
+        <div class="rating-platforms">
+          <div class="platform-item">
+            <i class="ri-google-fill"></i>
+            <span class="plat-score">4.9</span>
+            <span class="plat-name">Google</span>
+          </div>
+          <div class="platform-item">
+            <i class="ri-tripadvisor-fill"></i>
+            <span class="plat-score">5.0</span>
+            <span class="plat-name">TripAdvisor</span>
+          </div>
+          <div class="platform-item">
+            <i class="ri-yelp-fill"></i>
+            <span class="plat-score">4.8</span>
+            <span class="plat-name">Yelp</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       LOYALTY / MEMBERSHIP SECTION
+  ================================================= -->
+  <section class="loyalty section-padding" id="loyalty">
+    <div class="loyalty-bg"></div>
+    <div class="container">
+
+      <div class="section-header light" data-animate="fade-up">
+        <span class="section-tag">Velour Circle</span>
+        <h2 class="section-title">Become a <em>Member</em></h2>
+        <p class="section-subtitle">
+          Three tiers. Unlimited privilege. The deeper you go,
+          the more beautifully we reward your loyalty.
+        </p>
+      </div>
+
+      <div class="loyalty-tiers">
+
+        <div class="loyalty-card tier-bronze" data-animate="fade-up" style="--delay:0s">
+          <div class="tier-icon"><i class="ri-cup-line"></i></div>
+          <div class="tier-badge">Bronze</div>
+          <div class="tier-price">
+            <span class="price-amount">Free</span>
+            <span class="price-note">Join instantly</span>
+          </div>
+          <ul class="tier-perks">
+            <li><i class="ri-check-line"></i> Digital loyalty stamp card</li>
+            <li><i class="ri-check-line"></i> 1 free drink every 10 purchases</li>
+            <li><i class="ri-check-line"></i> Birthday treat on your day</li>
+            <li><i class="ri-check-line"></i> Early access to seasonal menus</li>
+            <li class="inactive"><i class="ri-close-line"></i> Priority reservations</li>
+            <li class="inactive"><i class="ri-close-line"></i> Monthly tasting events</li>
+          </ul>
+          <a href="#contact" class="tier-cta">Join Free</a>
+        </div>
+
+        <div class="loyalty-card tier-gold featured-tier" data-animate="fade-up" style="--delay:0.15s">
+          <div class="tier-popular">Most Popular</div>
+          <div class="tier-icon"><i class="ri-vip-crown-line"></i></div>
+          <div class="tier-badge">Gold</div>
+          <div class="tier-price">
+            <span class="price-amount">€29</span>
+            <span class="price-note">per month</span>
+          </div>
+          <ul class="tier-perks">
+            <li><i class="ri-check-line"></i> Everything in Bronze</li>
+            <li><i class="ri-check-line"></i> 15% off all food &amp; drinks</li>
+            <li><i class="ri-check-line"></i> Priority table reservations</li>
+            <li><i class="ri-check-line"></i> Monthly private tasting event</li>
+            <li><i class="ri-check-line"></i> Exclusive seasonal blend access</li>
+            <li class="inactive"><i class="ri-close-line"></i> Concierge coffee delivery</li>
+          </ul>
+          <a href="#contact" class="tier-cta gold-cta">Go Gold</a>
+        </div>
+
+        <div class="loyalty-card tier-black" data-animate="fade-up" style="--delay:0.3s">
+          <div class="tier-icon"><i class="ri-medal-line"></i></div>
+          <div class="tier-badge">Noir</div>
+          <div class="tier-price">
+            <span class="price-amount">€79</span>
+            <span class="price-note">per month</span>
+          </div>
+          <ul class="tier-perks">
+            <li><i class="ri-check-line"></i> Everything in Gold</li>
+            <li><i class="ri-check-line"></i> Dedicated table reserved weekly</li>
+            <li><i class="ri-check-line"></i> Monthly curated bean subscription</li>
+            <li><i class="ri-check-line"></i> Concierge coffee delivery (Paris)</li>
+            <li><i class="ri-check-line"></i> Private chef's tastings quarterly</li>
+            <li><i class="ri-check-line"></i> Name in our Founders' Book</li>
+          </ul>
+          <a href="#contact" class="tier-cta noir-cta">Go Noir</a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       OPENING HOURS SECTION
+  ================================================= -->
+  <section class="hours section-padding" id="hours">
+    <div class="container">
+      <div class="hours-wrapper" data-animate="fade-up">
+
+        <!-- Content -->
+        <div class="hours-content">
+          <span class="section-tag">Visit Us</span>
+          <h2 class="section-title">Opening <em>Hours</em></h2>
+          <p class="hours-intro">
+            We open early so your day can begin beautifully.
+            Walk in and take your favourite corner, or reserve your
+            table in advance to guarantee your experience.
+          </p>
+
+          <div class="hours-list">
+            <div class="hours-row">
+              <span class="day">Monday – Friday</span>
+              <span class="dots"></span>
+              <span class="time">7:30 AM – 10:00 PM</span>
+            </div>
+            <div class="hours-row">
+              <span class="day">Saturday</span>
+              <span class="dots"></span>
+              <span class="time">8:00 AM – 11:00 PM</span>
+            </div>
+            <div class="hours-row">
+              <span class="day">Sunday</span>
+              <span class="dots"></span>
+              <span class="time">9:00 AM – 7:00 PM</span>
+            </div>
+            <div class="hours-row">
+              <span class="day">Public Holidays</span>
+              <span class="dots"></span>
+              <span class="time">10:00 AM – 6:00 PM</span>
+            </div>
+          </div>
+
+          <div class="hours-note">
+            <i class="ri-information-line"></i>
+            <span>
+              Kitchen closes 30 minutes before closing time.
+              Last brunch orders accepted at 3:30 PM on weekdays
+              and 4:30 PM on weekends. Reservations strongly recommended
+              for Friday evenings and weekend brunch. Walk-ins welcome
+              subject to availability.
+            </span>
+          </div>
+        </div>
+
+        <!-- Visual -->
+        <div class="hours-visual">
+          <div class="hours-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=700&q=85"
+              alt="Velour Café morning coffee service" />
+            <div class="hours-tag-badge">
+              <i class="ri-map-pin-2-line"></i>
+              <div>
+                <strong>12 Rue du Faubourg Saint-Honoré, Paris 75008</strong>
+                <span>France — Golden Triangle</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       CONTACT SECTION
+  ================================================= -->
+  <section class="contact section-padding" id="contact">
+    <div class="container">
+
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-tag">Get in Touch</span>
+        <h2 class="section-title">Reserve Your <em>Experience</em></h2>
+        <p class="section-subtitle">
+          Book a table, enquire about private events, arrange a
+          bespoke tasting, or simply say hello. We would love to hear from you.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+
+        <!-- Form -->
+        <div class="contact-form-wrap" data-animate="fade-left">
+          <form class="contact-form" id="contactForm" novalidate>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="fname"
+                  placeholder="Alessandro" required />
+              </div>
+              <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lname"
+                  placeholder="Rossi" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email"
+                placeholder="hello@example.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone"
+                placeholder="+33 1 42 65 87 30" />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="guests">Number of Guests</label>
+                <select id="guests" name="guests">
+                  <option value="" disabled selected>Select guests</option>
+                  <option value="1-2">1 – 2 guests</option>
+                  <option value="3-4">3 – 4 guests</option>
+                  <option value="5-6">5 – 6 guests</option>
+                  <option value="7+">Private event (7+)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="date">Preferred Date</label>
+                <input type="date" id="date" name="date" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="occasion">Occasion</label>
+              <select id="occasion" name="occasion">
+                <option value="" disabled selected>Select occasion</option>
+                <option value="breakfast">Breakfast / Morning Coffee</option>
+                <option value="brunch">Weekend Brunch</option>
+                <option value="lunch">Afternoon Lunch</option>
+                <option value="dinner">Evening Dinner</option>
+                <option value="tasting">Private Coffee Tasting</option>
+                <option value="event">Corporate / Private Event</option>
+                <option value="workshop">Barista Workshop</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Special Requests or Message</label>
+              <textarea id="message" name="message" rows="4"
+                placeholder="Any dietary requirements, allergies, special arrangements,
+or a personal message for our team..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary full-width">
+              <span>Send Reservation Request</span>
+              <i class="ri-send-plane-line"></i>
+            </button>
+
+            <div class="form-success" id="formSuccess">
+              <i class="ri-check-double-line"></i>
+              <span>
+                Thank you! Your reservation request has been received.
+                Our team will confirm within 24 hours.
+              </span>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- Info + Map -->
+        <div class="contact-info-wrap" data-animate="fade-right">
+
+          <div class="contact-info-card">
+
+            <div class="contact-info-item">
+              <div class="info-icon"><i class="ri-map-pin-2-line"></i></div>
+              <div>
+                <h4>Our Location</h4>
+                <p>12 Rue du Faubourg Saint-Honoré<br/>Paris, France 75008<br/>
+                  <em style="font-size:.82rem;color:var(--clr-text-muted)">
+                    Near the Champs-Élysées
+                  </em>
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="info-icon"><i class="ri-phone-line"></i></div>
+              <div>
+                <h4>Reservations</h4>
+                <p>+33 1 42 65 87 30</p>
+                <p style="font-size:.82rem;color:var(--clr-text-muted);margin-top:4px">
+                  Mon – Fri: 9:00 AM – 6:00 PM
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="info-icon"><i class="ri-mail-line"></i></div>
+              <div>
+                <h4>Email Us</h4>
+                <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a7cfc2cbcbc8e7c6d2d5d2cac4c6c1c289ced3">[email&#160;protected]</a></p>
+                <p style="font-size:.82rem;color:var(--clr-text-muted);margin-top:4px">
+                  We reply within 24 hours
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="info-icon"><i class="ri-instagram-line"></i></div>
+              <div>
+                <h4>Follow Our World</h4>
+                <p>@velourcafe.paris</p>
+                <p style="font-size:.82rem;color:var(--clr-text-muted);margin-top:4px">
+                  Daily stories, seasonal menus &amp; behind the scenes
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="info-icon"><i class="ri-car-line"></i></div>
+              <div>
+                <h4>Getting Here</h4>
+                <p style="font-size:.88rem;line-height:1.7">
+                  Metro: <strong>Line 1 — George V</strong> (3 min walk)<br/>
+                  Parking: <strong>Parking Champs-Élysées Clemenceau</strong><br/>
+                  Bus: Lines <strong>28 &amp; 52</strong> — Faubourg Saint-Honoré
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Google Maps Embed -->
+          <div class="map-wrap">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.393!2d2.3107!3d48.8708!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fc4e6b30de1%3A0x9f0d3d87a6b0a1b0!2sRue%20du%20Faubourg%20Saint-Honor%C3%A9%2C%20Paris%2C%20France!5e0!3m2!1sen!2sfr!4v1700000000000"
+              width="100%"
+              height="240"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Velour Café — 12 Rue du Faubourg Saint-Honoré, Paris">
+            </iframe>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       FOOTER
+  ================================================= -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+
+          <!-- Brand -->
+          <div class="footer-brand">
+            <a href="#" class="nav-logo">
+              <span class="logo-icon">☕</span>
+              <span class="logo-text">Velour<em>Café</em></span>
+            </a>
+            <p>
+              A sanctuary of fine coffee, thoughtful cuisine, and
+              understated luxury — crafted with love in the heart of Paris
+              since 2015.
+            </p>
+            <div class="footer-socials">
+              <a href="#" aria-label="Instagram">
+                <i class="ri-instagram-line"></i>
+              </a>
+              <a href="#" aria-label="Facebook">
+                <i class="ri-facebook-circle-line"></i>
+              </a>
+              <a href="#" aria-label="TikTok">
+                <i class="ri-tiktok-line"></i>
+              </a>
+              <a href="#" aria-label="Pinterest">
+                <i class="ri-pinterest-line"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Navigate -->
+          <div class="footer-links-group">
+            <h4>Navigate</h4>
+            <ul>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#menu">Our Menu</a></li>
+              <li><a href="#experience">Experience</a></li>
+              <li><a href="#gallery">Gallery</a></li>
+              <li><a href="#testimonials">Guest Reviews</a></li>
+              <li><a href="#loyalty">Membership</a></li>
+              <li><a href="#hours">Opening Hours</a></li>
+              <li><a href="#contact">Reservations</a></li>
+            </ul>
+          </div>
+
+          <!-- Explore -->
+          <div class="footer-links-group">
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="#loyalty">Velour Circle Membership</a></li>
+              <li><a href="#testimonials">Guest Reviews</a></li>
+              <li><a href="#">Barista Workshops</a></li>
+              <li><a href="#">Private Events</a></li>
+              <li><a href="#">Gift Cards</a></li>
+              <li><a href="#">Coffee Subscription</a></li>
+              <li><a href="#">Press &amp; Media</a></li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="footer-newsletter">
+            <h4>Join the Inner Circle</h4>
+            <p>
+              Be the first to hear about new seasonal menus, exclusive
+              tasting events, limited edition blends, and members-only offers.
+            </p>
+            <form class="newsletter-form" id="newsletterForm">
+              <input type="email"
+                placeholder="Your email address"
+                aria-label="Email address for newsletter"
+                required />
+              <button type="submit" aria-label="Subscribe to newsletter">
+                <i class="ri-arrow-right-line"></i>
+              </button>
+            </form>
+            <p style="font-size:.75rem;color:rgba(232,213,183,.3);margin-top:12px;line-height:1.6">
+              No spam, ever. Unsubscribe at any time.
+              We respect your privacy.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="container">
+        <p>
+          &copy; 2025 Velour Café S.A.S. All rights reserved.
+          Handcrafted in Paris with precision and passion.
+        </p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Cookie Settings</a>
+          <a href="#">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ================================================
+       BACK TO TOP BUTTON
+  ================================================= -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top of page">
+    <i class="ri-arrow-up-line"></i>
+  </button>
+
+
+  <!-- ================================================
