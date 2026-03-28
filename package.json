@@ -1,0 +1,23 @@
+{
+  "name": "velour-cafe",
+  "version": "1.0.0",
+  "description": "Premium Luxury Café Website — Velour Café",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "dev": "tsc && npm run watch"
+  },
+  "keywords": [
+    "cafe",
+    "luxury",
+    "velour",
+    "typescript",
+    "website"
+  ],
+  "author": "Ahmvdaziz",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.3.0"
+  }
+}
